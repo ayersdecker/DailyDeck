@@ -1,0 +1,16 @@
+C:\Users\draye\source\repos\DailyDeck\DailyDeck\DailyDeck\obj\Debug\net5.0\DailyDeck.csproj.AssemblyReference.cache
+C:\Users\draye\source\repos\DailyDeck\DailyDeck\DailyDeck\obj\Debug\net5.0\DailyDeck.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\draye\source\repos\DailyDeck\DailyDeck\DailyDeck\obj\Debug\net5.0\DailyDeck.AssemblyInfoInputs.cache
+C:\Users\draye\source\repos\DailyDeck\DailyDeck\DailyDeck\obj\Debug\net5.0\DailyDeck.AssemblyInfo.cs
+C:\Users\draye\source\repos\DailyDeck\DailyDeck\DailyDeck\obj\Debug\net5.0\DailyDeck.csproj.CoreCompileInputs.cache
+C:\Users\draye\source\repos\DailyDeck\DailyDeck\DailyDeck\bin\Debug\net5.0\DailyDeck.exe
+C:\Users\draye\source\repos\DailyDeck\DailyDeck\DailyDeck\bin\Debug\net5.0\DailyDeck.deps.json
+C:\Users\draye\source\repos\DailyDeck\DailyDeck\DailyDeck\bin\Debug\net5.0\DailyDeck.runtimeconfig.json
+C:\Users\draye\source\repos\DailyDeck\DailyDeck\DailyDeck\bin\Debug\net5.0\DailyDeck.runtimeconfig.dev.json
+C:\Users\draye\source\repos\DailyDeck\DailyDeck\DailyDeck\bin\Debug\net5.0\DailyDeck.dll
+C:\Users\draye\source\repos\DailyDeck\DailyDeck\DailyDeck\bin\Debug\net5.0\ref\DailyDeck.dll
+C:\Users\draye\source\repos\DailyDeck\DailyDeck\DailyDeck\bin\Debug\net5.0\DailyDeck.pdb
+C:\Users\draye\source\repos\DailyDeck\DailyDeck\DailyDeck\obj\Debug\net5.0\DailyDeck.dll
+C:\Users\draye\source\repos\DailyDeck\DailyDeck\DailyDeck\obj\Debug\net5.0\ref\DailyDeck.dll
+C:\Users\draye\source\repos\DailyDeck\DailyDeck\DailyDeck\obj\Debug\net5.0\DailyDeck.pdb
+C:\Users\draye\source\repos\DailyDeck\DailyDeck\DailyDeck\obj\Debug\net5.0\DailyDeck.genruntimeconfig.cache
