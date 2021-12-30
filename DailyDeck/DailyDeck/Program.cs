@@ -1,15 +1,20 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+
 
 namespace DailyDeck
 {
     class Program
     {
-        static Dictionary<string, Assignment> asnDictionary = new Dictionary<string, Assignment>();
+        static List<Assignment> asnList = new List<Assignment>();
+        static string file = "Planner.Json";
         static void Main(string[] args)
         {
+            LoadJson();
             IntroMessage(); // INTRO DISPLAY BANNER + TIME 
+
             while (true)    // FOREVER LOOP
             {
                 int selection = MenuDisplay(); // MENU DISPLAY
@@ -27,6 +32,7 @@ namespace DailyDeck
                     case 4: // EXIT PROGRAM
                         Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
                         Console.ForegroundColor = ConsoleColor.Blue;
+                        SaveJsonFile();
                         Console.WriteLine("\n\tGoodbye!\n\n\n");
                         Environment.Exit(0);
                         break;
@@ -59,7 +65,7 @@ namespace DailyDeck
             int selection;
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("|\n|\n|\tDailyDeck Menu  - - Current Date/Time: " + DateTime.Now + "\n|\n|");
-            Console.WriteLine("|\n|\n|\n|\n|\n|\n|\n|\n|");
+            Console.WriteLine("| Course: N/A\n| Course: N/A\n| Course: N/A\n| Course: N/A\n| Course: N/A\n|\n|\n|\n|");
             Console.WriteLine("|\n|\t1. View Planner\n|\n|\t2. Enter an Assignment\n|\n|\t3. Remove Assignment\n|\n|\t4. Exit Program\n|\n|\n|\n|\n|\n|\n|");
             Console.ForegroundColor = ConsoleColor.Green ;
             while (true)
@@ -85,12 +91,10 @@ namespace DailyDeck
         private static void ViewPlanner()
 
         {
-            Console.WriteLine("\n * All Student Records * \n");
-            foreach (KeyValuePair<string, Assignment> asn in asnDictionary) // Displays all Students in Dictionary
+            Console.WriteLine("\n * All Assignments * \n");
+            foreach (Assignment asn in asnList) // Displays all Students in Dictionary
             {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"{asn.Value}\n");
-                Console.ForegroundColor = ConsoleColor.Gray;
+                Helper.ColorGreen($"{asn}\n");
             }
             System.Threading.Thread.Sleep(10000);
 
@@ -109,57 +113,71 @@ namespace DailyDeck
                     loopKey = true;
                     Console.Write("Assignment Name: ");
                     asn = Console.ReadLine();
-                    if (asnDictionary.ContainsKey(asn)) { loopKey = false; }
+                    if (asn == "") { loopKey = false; }
                     Console.Write("Course: ");
                     course = Console.ReadLine(); // Collects Course
                     if (course == "") { loopKey = false; }
                     Console.Write("Due: ");
                     due = Console.ReadLine(); // Collects Course
                     if (due == "") { loopKey = false; }
-                    if (loopKey != false)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("\n[Invalid Input for a Field Above -- Try Again]\n");
-                        Console.ForegroundColor = ConsoleColor.Gray;
-                    }
+                    if (loopKey != false){ break;}
+                    else{ Helper.ColorRed("\n[Invalid Input for a Field Above -- Try Again]\n");}
                 } while (true);
 
-                Assignment assignment = new Assignment(asn, course, due); // New Asn
-                asnDictionary.Add(asn, assignment); // Adds New student to Dictionary
+                Assignment assignment = new Assignment(asn, course, due); 
+                asnList.Add(assignment); 
                 Console.Write("\n\tAdd another assignment?(Y/N): ");
-                if (Console.ReadLine().ToUpper() == "Y") { loopKey = false; } // Uses loop condition to add another student
+                if (Console.ReadLine().ToUpper() == "Y") { loopKey = false; } 
 
             } while (loopKey == false);
         }
+        private static void LoadJson() // Loads current file into program
+        {
+            {
+                if (File.Exists(file))
+                {
+                    StreamReader reader = new StreamReader(file);
+                    string listRead = reader.ReadToEnd();
+                    asnList = JsonConvert.DeserializeObject<List<Assignment>>(listRead);
+                    reader.Close();
+                }
+                else { Console.WriteLine("{0} Does not exist", file); }
+            }
+        }
+        private static void SaveJsonFile() // Saves all files into the Json file / Displays count
+        {
+            string listSerial = JsonConvert.SerializeObject(asnList);
+            StreamWriter writer = new StreamWriter(file);
+            writer.Write(listSerial);
+            writer.Close();
 
-       
+            Console.WriteLine($"\nThere are {asnList.Count} assignment(s) in the list\n");
+        }
+
         private static void RemoveAsn()
         {
-            string select;
+            int select;
+            int count = 1;
+            Dictionary<int, Assignment> asnDic = new Dictionary<int, Assignment>();
             Console.WriteLine("\n * Delete Records * \n");
-            foreach (KeyValuePair<string, Assignment> asn in asnDictionary) // Displays all Students in Dictionary
+            foreach (Assignment asn in asnList) // Displays all Students in Dictionary
             {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"{asn.Value}\n");
-                Console.ForegroundColor = ConsoleColor.Gray;
+                asnDic.Add(count, asn);
+                Helper.ColorGreen($"{count}. " + asn.ToString());
+                count++;
             }
             do
             {
                 Console.Write("Select an Assignment to Remove: ");
-                select = Console.ReadLine();
-                if (select != "")
+                select = int.Parse(Console.ReadLine());
+                if (select > 0 && select < asnDic.Count)
                 {
                     break;
                 }
             } while (true);
-            asnDictionary.Remove(select); // Removes from dictionary
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("\n\t- - Assignment Removed - -\n");
-            Console.ForegroundColor = ConsoleColor.Gray;
+            Assignment removal = asnDic[select];
+            asnList.Remove(removal); // Removes from dictionary
+            Helper.ColorGreen("\n\t- - Assignment Removed - -\n");
         }
     }
 }

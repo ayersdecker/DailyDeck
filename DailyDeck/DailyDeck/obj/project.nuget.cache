@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "rCVaUbdWC69yuvtb1Kzo9TQPofOnvmO32XYbo7SC1gc7WBcK03QJ4HBC8KYiwLU9kIh3jbrU/coPhUH8htCf4w==",
+  "dgSpecHash": "Zjw0st3ciUq77bRuNDV495hvnQ3eMGOBz0T9if2SKeDRMNEP6OIyrLDW6jXehknVeRJK8gcL7R9/d8LkSmdEBA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\draye\\source\\repos\\DailyDeck\\DailyDeck\\DailyDeck\\DailyDeck.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Decker Ayers\\Source\\Repos\\DailyDeck\\DailyDeck\\DailyDeck\\DailyDeck.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Decker Ayers\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Decker Ayers\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Decker Ayers\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Decker Ayers\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Decker Ayers\\.nuget\\packages\\microsoft.netcore.app.host.win-x86\\5.0.13\\microsoft.netcore.app.host.win-x86.5.0.13.nupkg.sha512"
+  ],
   "logs": []
 }
