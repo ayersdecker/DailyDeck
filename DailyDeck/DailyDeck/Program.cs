@@ -45,12 +45,19 @@ namespace DailyDeck
         }
         private static void IntroMessage()
         {
+            Helper.ColorYellow("||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+            Helper.ColorMagenta("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("\n\n\n\n\n\n\n\t   ////    //   ////  //  //  //   ////   //// ////  //  //    ");
-            Console.WriteLine("\t  //  // //_//  //   //    //     //  // ///  //    ////    ");
-            Console.WriteLine("\t ////   // // ////  ////  //     ////   //// ////  //  //    ");
+            Console.WriteLine("||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+            Console.WriteLine("\n\n\n\n\n\n\t  ////    //   ////  //  //  //   ////   //// ////  //  //    ");
+            Console.WriteLine("\t //  // //_//  //   //    //     //  // ///  //    ////    ");
+            Console.WriteLine("\t////   // // ////  ////  //     ////   //// ////  //  //    ");
             Console.WriteLine("\n\n\n\tDecker Ayers || December 2021\n");
             Console.WriteLine("\n\n\t   " + DateTime.Now + "\n\n");
+            Console.WriteLine("||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+            Helper.ColorMagenta("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+            Helper.ColorYellow("||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+
             Console.ForegroundColor = ConsoleColor.Gray;
             System.Threading.Thread.Sleep(2000);
             Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -63,14 +70,21 @@ namespace DailyDeck
         private static int MenuDisplay()
         {
             int selection;
+            Helper.ColorYellow("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+            Helper.ColorMagenta("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("|\n|\n|\tDailyDeck Menu  - - Current Date/Time: " + DateTime.Now + "\n|\n|");
-            Console.WriteLine("| Course: N/A\n| Course: N/A\n| Course: N/A\n| Course: N/A\n| Course: N/A\n|\n|\n|\n|");
-            Console.WriteLine("|\n|\t1. View Planner\n|\n|\t2. Enter an Assignment\n|\n|\t3. Remove Assignment\n|\n|\t4. Exit Program\n|\n|\n|\n|\n|\n|\n|");
-            Console.ForegroundColor = ConsoleColor.Green ;
+            Console.WriteLine("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+            Console.WriteLine("|\n|\tDailyDeck Menu  - - Current Date/Time: " + DateTime.Now + "\n|\n|");
+            Console.WriteLine("| \tCourse: NMAD 181\n| \tCourse: NMAD 182\n| \tCourse: NMAD 250\n| \tCourse: ISTE 240\n|\n|\n|");
+            Console.WriteLine("|\n|\t1. View Planner\n|\n|\t2. Enter an Assignment\n|\n|\t3. Remove Assignment\n|\n|\t4. Exit Program\n|\n|\n|\n|\n|");
             while (true)
             {
-                Console.Write("|\tSelection: ");
+                Console.WriteLine(      "||||||||||||||||");
+                Helper.ColorMagenta( "||||||||||||||");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write("||||||||||||");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.Write("      [Selection]: ");
                 Console.ForegroundColor = ConsoleColor.Gray;
                 if (int.TryParse(Console.ReadLine(), out int selected) && selected < 5 && selected > 0)
                 {
@@ -83,7 +97,7 @@ namespace DailyDeck
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("[Invalid Selection -- Try Again]");
-                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                 }
             }
             return selection;
@@ -91,11 +105,15 @@ namespace DailyDeck
         private static void ViewPlanner()
 
         {
+
             Console.WriteLine("\n * All Assignments * \n");
             foreach (Assignment asn in asnList) // Displays all Students in Dictionary
             {
                 Helper.ColorGreen($"{asn}\n");
             }
+            Helper.ColorYellow("\n|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+            Helper.ColorMagenta("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+            Helper.ColorCyan("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
             System.Threading.Thread.Sleep(10000);
 
         }
@@ -170,7 +188,7 @@ namespace DailyDeck
             {
                 Console.Write("Select an Assignment to Remove: ");
                 select = int.Parse(Console.ReadLine());
-                if (select > 0 && select < asnDic.Count)
+                if (select > 0 && select <= asnDic.Count)
                 {
                     break;
                 }

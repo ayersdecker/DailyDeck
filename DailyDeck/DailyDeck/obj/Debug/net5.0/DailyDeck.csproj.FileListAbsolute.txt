@@ -32,3 +32,5 @@ C:\Users\Decker Ayers\Source\Repos\DailyDeck\DailyDeck\DailyDeck\obj\Debug\net5.
 C:\Users\Decker Ayers\Source\Repos\DailyDeck\DailyDeck\DailyDeck\obj\Debug\net5.0\DailyDeck.genruntimeconfig.cache
 C:\Users\Decker Ayers\Source\Repos\DailyDeck\DailyDeck\DailyDeck\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\Decker Ayers\Source\Repos\DailyDeck\DailyDeck\DailyDeck\obj\Debug\net5.0\DailyDeck.csproj.CopyComplete
+C:\Users\draye\Source\Repos\DailyDeck\DailyDeck\DailyDeck\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\draye\Source\Repos\DailyDeck\DailyDeck\DailyDeck\obj\Debug\net5.0\DailyDeck.csproj.CopyComplete
