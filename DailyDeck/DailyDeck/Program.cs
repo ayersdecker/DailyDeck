@@ -8,6 +8,7 @@ namespace DailyDeck
 {
     class Program
     {
+        static List<string> courseLst = new List<string>();
         static List<Assignment> asnList = new List<Assignment>();
         static string file = "Planner.Json";
         static void Main(string[] args)
@@ -133,7 +134,7 @@ namespace DailyDeck
                     asn = Console.ReadLine();
                     if (asn == "") { loopKey = false; }
                     Console.Write("Course: ");
-                    course = Console.ReadLine(); // Collects Course
+                    course = CourseSelect(); // Collects Course
                     if (course == "") { loopKey = false; }
                     Console.Write("Due: ");
                     due = Console.ReadLine(); // Collects Course
@@ -171,7 +172,27 @@ namespace DailyDeck
 
             Console.WriteLine($"\nThere are {asnList.Count} assignment(s) in the list\n");
         }
+        private static string CourseSelect()
+        {
+            int i = 1;
+            string[] courseArr = new string[2];
+            foreach(string course in courseLst)
+            {
+                Helper.ColorGreen($"{i}. {course}");
+                courseArr[i] = course;
+                Array.Resize(ref courseArr, 1);
+                i++;
+            }
+            int select = Helper.ValidateNum(1, i);
 
+            if (select == 1) { return courseArr[1]; }
+            if (select == 2) { return courseArr[2]; }
+            if (select == 3) { return courseArr[3]; }
+            if (select == 4) { return courseArr[4]; }
+            if (select == 5) { return courseArr[5]; }
+            else return "null";
+
+        }
         private static void RemoveAsn()
         {
             int select;
