@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0gyFBhb84PJmSJ8fsCQI28vSUvEKhb77koQXyYMUsNuXDqqEGqS3+1btXdMpMTK9b1hlc1qQWQ6y7eWBJzsVfA==",
+  "dgSpecHash": "HFh/zhZOcszly9rjTbjeblzWcJWiqXmyjNRW2EZDL4OqRCA8VP+tzDNEU/mjWD/482WGGbzGZj7AhTEM8+eH8A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\draye\\Source\\Repos\\DailyDeck\\DailyDeck\\DailyDeck\\DailyDeck.csproj",
+  "projectFilePath": "C:\\Users\\draye\\source\\repos\\DailyDeck\\DailyDeck\\DailyDeck\\DailyDeck.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\draye\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],

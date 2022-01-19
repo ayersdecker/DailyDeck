@@ -10,7 +10,7 @@ namespace DailyDeck
     {
         static List<string> courseLst = new List<string>();
         static List<Assignment> asnList = new List<Assignment>();
-        static string file = "Planner.Json";
+        static string file = @"C:\Users\draye\Desktop\Code\Code\C#\planner.json";
         static void Main(string[] args)
         {
             LoadJson();
@@ -62,12 +62,13 @@ namespace DailyDeck
             Console.ForegroundColor = ConsoleColor.Gray;
             System.Threading.Thread.Sleep(2000);
             Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-
+            
 
 
             
 
         }
+        
         private static int MenuDisplay()
         {
             int selection;
@@ -174,22 +175,18 @@ namespace DailyDeck
         }
         private static string CourseSelect()
         {
-            int i = 1;
-            string[] courseArr = new string[2];
-            foreach(string course in courseLst)
-            {
-                Helper.ColorGreen($"{i}. {course}");
-                courseArr[i] = course;
-                Array.Resize(ref courseArr, 1);
-                i++;
-            }
-            int select = Helper.ValidateNum(1, i);
+            string[] courseArr = new string[4];
+            courseArr[0] = "NMAD 181";
+            courseArr[1] = "NMAD 182";
+            courseArr[2] = "NMAD 250";
+            courseArr[3] = "ISTE 240";
+            Console.WriteLine($"\n1. {courseArr[0]}\n2. {courseArr[1]}\n3. {courseArr[2]}\n4. {courseArr[3]}");
+            int select = Helper.ValidateNum(1, 4);
 
-            if (select == 1) { return courseArr[1]; }
-            if (select == 2) { return courseArr[2]; }
-            if (select == 3) { return courseArr[3]; }
-            if (select == 4) { return courseArr[4]; }
-            if (select == 5) { return courseArr[5]; }
+            if (select == 1) { return courseArr[0]; }
+            if (select == 2) { return courseArr[1]; }
+            if (select == 3) { return courseArr[2]; }
+            if (select == 4) { return courseArr[3]; }
             else return "null";
 
         }

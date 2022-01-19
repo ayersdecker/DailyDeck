@@ -1,0 +1,6 @@
+C:\Users\draye\Desktop\DailyDeck.exe
+C:\Users\draye\Desktop\DailyDeck.dll
+C:\Users\draye\Desktop\DailyDeck.deps.json
+C:\Users\draye\Desktop\DailyDeck.runtimeconfig.json
+C:\Users\draye\Desktop\DailyDeck.pdb
+C:\Users\draye\Desktop\Newtonsoft.Json.dll
